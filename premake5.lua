@@ -4,7 +4,7 @@ project "googletest"
 	staticruntime "On"
 
 	baseBinDir = "../../../bin/"
-	baseBinDir = "../../../bin-int/"
+	baseBinIntDir = "../../../bin-int/"
 
 
 	targetdir (baseBinDir .. outputdir .. "/%{prj.name}")
@@ -13,12 +13,13 @@ project "googletest"
 	files
 	{
 		"%{prj.name}/include/**.h",
-		"%{prj.name}/src/**.cc"
+		"%{prj.name}/src/gtest-all.cc"
 	}
 
 	includedirs
 	{
-		"%{prj.name}/include"
+		"%{prj.name}/include",
+		"%{prj.name}"
 	}
 
 	filter "system:linux"
